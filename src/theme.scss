@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, label {
+    font-weight: 600;
+}
+
+.form-control {
+    padding: 2px 20px;
+    line-height: 1.2rem !important;
+    border-radius: .3rem !important;
+}
+
+.form-control:focus{
+    border-color: #212529 !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25) !important;
+}
+
+.nav-active {
+    border-bottom: 3px solid #ff6b51 !important;
+}
+
+.nav-margin {
+    margin-top: 100px;
+}
+
+.btn-link {
+    text-decoration: none !important;
+}
