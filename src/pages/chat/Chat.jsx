@@ -8,39 +8,32 @@ export default function Chat() {
     <div>
         <NavigationBar />
         <div className="container mt-md-5 pb-md-5">
-            <div className="row">
-                <SideBar />
-                <div className="col-md-9 ps-md-5">
-                  <form className="mb-4" style={{maxWidth: '30rem'}}>
-                    <div className="form-group mb-3">
-                      <label htmlFor="exampleInputEmail1">Char Supervisor</label>
-                      <small className="alert alert-success p-1 ms-2">Approved</small>
-                      <select className="form-control mt-3" disabled >
-                        <option>1</option>
-                      </select>
-                      <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div className="form-group">
-                      <input type="submit" className="btn btn-sm btn-primary" value="Request" disabled />
-                    </div>
-                  </form>
-                  <div className="border-bottom mb-4"></div>
-                  <form className="mb-4" style={{maxWidth: '30rem'}}>
-                    <div className="form-group mb-3">
-                      <label htmlFor="exampleInputEmail1">Request Co-Supervisor</label>
-                      <small className="alert alert-warning p-1 ms-2">Pending</small>
-                      <select className="form-control mt-3">
-                        <option>1</option>
-                      </select>
-                      <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    <div className="form-group">
-                      <input type="submit" className="btn btn-sm btn-primary" value="Request" />
-                    </div>
-                  </form>
+          <div className="row">
+              <SideBar />
+              <div className="col-md-9 ps-md-5">
+                <h4 className="mb-3">Discussion</h4>
+                <div className="row d-flex justify-content-start">
+                  <div className="col-md-8 message-item mb-3">
+                    <small>Dineth Piyumantha</small>
+                    <p>Hello !</p>
+                  </div>
                 </div>
+                <div className="row d-flex justify-content-end">
+                  <div className="col-md-8 message-item-colored mb-3 text-white">
+                    <small>Dineth Piyumantha</small>
+                    <p>Hello !</p>
+                  </div>
+                </div>
+                <div className="row mt-3 border-top py-3">
+                  <textarea className="col-md-12 form-control" placeholder="Type your message here..."></textarea>
+                  <button type="submit" className="btn btn-primary col-md-2 ml-md-auto mt-2">
+                    <span className="me-2">Send</span>
+                    <i class="fa fa-paper-plane"></i>
+                  </button>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
         <FooterBar />
     </div>
   )

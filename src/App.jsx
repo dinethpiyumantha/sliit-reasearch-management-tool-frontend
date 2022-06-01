@@ -7,12 +7,14 @@ import RequestSupervisors from './pages/group/RequestSupervisors';
 import SubmitDocument from './pages/group/SubmitDocument';
 import { Routes, Route } from 'react-router-dom';
 import Chat from './pages/chat/Chat';
+import Home from './pages/home/Home';
 
 export default function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<ProfileHome/>} />
+        <Route path="/index" element={<Home/>} />
         <Route path="/group/register" element={<RegisterGroup/>} />
         <Route path="/student/register" element={<RegisterStudent/>} />
         <Route path="/group/supervisors" element={<RequestSupervisors/>} />
