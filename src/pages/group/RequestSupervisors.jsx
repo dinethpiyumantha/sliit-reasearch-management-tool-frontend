@@ -3,7 +3,7 @@ import FooterBar from '../../components/footer-bar/FooterBar'
 import NavigationBar from '../../components/navigation-bar/NavigationBar'
 import SideBar from '../../components/side-bar/SideBar'
 
-export default function ProfileHome() {
+export default function RequestSupervisors() {
   return (
     <div>
         <NavigationBar />
