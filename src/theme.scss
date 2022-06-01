@@ -4,8 +4,18 @@
     font-size: 15px;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, label {
+h1, h2, h3, h4, h5, h6, a, label {
     font-weight: 600;
+}
+
+.profile-picture {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);;
+    overflow: hidden;
+    height: 10rem;
+    width: 10rem;
+    background-color: #ff6b51;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .form-control {
