@@ -10,8 +10,8 @@ import Chat from './pages/chat/Chat';
 import Home from './pages/home/Home';
 
 import ViewRoles from './pages/admin/ViewRoles';
-import PanelMembers from './pages/admin/PanelMembers';
 import Submission from './pages/admin/Submission';
+import PanelMembersList from './pages/admin/PanelMembersList';
 
 export default function App() {
   return (
@@ -26,8 +26,8 @@ export default function App() {
         <Route path="/group/discussion" element={<Chat/>} />
 
         <Route path="/admin" element={<ViewRoles/>} />
-        <Route path="/panelmembers" element={<PanelMembers/>} />
-        <Route path="/submission" element={<Submission/>} />
+        <Route path="/admin/panelmembers" element={<PanelMembersList/>} />
+        <Route path="/admin/submission" element={<Submission/>} />
       </Routes>
     </div>
   )

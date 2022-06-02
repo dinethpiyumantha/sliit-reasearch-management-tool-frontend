@@ -47,14 +47,14 @@ export default function AdminNavigationBar() {
                                     <span className="ms-1">View Roles</span>
                                 </Link>
                             </li>
-                            <li className={(path == '/panelmembers') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
-                                <Link to="/panelmembers" className={(path == '/panelmembers') ? 'btn nav-item-btn-active' : 'btn'}>
+                            <li className={(path == '/admin/panelmembers') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/admin/panelmembers" className={(path == '/admin/panelmembers') ? 'btn nav-item-btn-active' : 'btn'}>
                                 <i class="fas fa-user-tie"></i>
                                 <span className="ms-1">Panel Memebers</span>
                             </Link>
                             </li>
-                            <li className={(path == '/submission') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
-                                <Link to="/submission" className={(path == '/submission') ? 'btn nav-item-btn-active' : 'btn'}>
+                            <li className={(path == '/admin/submission') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/admin/submission" className={(path == '/admin/submission') ? 'btn nav-item-btn-active' : 'btn'}>
                                 <i class="fas fa-file-signature"></i>
                                 <span className="ms-1">Submissions</span>
                             </Link>
