@@ -60,7 +60,7 @@ export default function Chat() {
                     <div className="col-md-8 message-item mb-3">
                       <small>{chat.sender}</small>
                       <p>{chat.message}</p>
-                      <span className="d-flex justify-content-between text-muted">
+                      <span className="d-flex justify-content-end text-muted">
                         <small style={{fontSize: ".8rem"}}>{moment(chat.createdAt).format("YYYY-MM-DD HH:mm:ss")}</small>
                       </span>
                     </div>
@@ -71,7 +71,7 @@ export default function Chat() {
                     <div className="col-md-8 message-item-colored mb-3 text-white">
                       <small>{chat.sender}</small>
                       <p>{chat.message}</p>
-                      <span className="d-flex justify-content-between text-muted">
+                      <span className="d-flex justify-content-end text-white">
                         <small style={{fontSize: ".8rem"}}>{moment(chat.createdAt).format("YYYY-MM-DD HH:mm:ss")}</small>
                       </span>
                     </div>

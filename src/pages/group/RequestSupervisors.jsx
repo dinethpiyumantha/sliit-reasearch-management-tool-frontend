@@ -66,6 +66,22 @@ export default function RequestSupervisors() {
     });
   }
 
+  const changeStatusStyle = (status) => {
+    const string = status.toLowerCase();
+    if (string === "approved") {
+      return "alert alert-success p-1 ms-2";
+    } else if (string === "pending") {
+      return "alert alert-warning p-1 ms-2";
+    } else if (string === "rejected") {
+      return "alert alert-danger p-1 ms-2";
+    } else {
+      return "alert alert-warning p-1 ms-2";
+    }
+  }
+
+  const isApproved = (status) => {
+    return (status.toLowerCase() == "approved") ? true : false;
+  }
 
   useEffect(() => {
     fetchData();
@@ -82,7 +98,7 @@ export default function RequestSupervisors() {
                   <form onSubmit={submitSupervisor} className="mb-4" style={{maxWidth: '30rem'}}>
                     <div className="form-group mb-3">
                       <label htmlFor="exampleInputEmail1">Request Supervisor</label>
-                      <small className={"alert alert-warning p-1 ms-2"}>
+                      <small className={changeStatusStyle(userContext.group.supervisor.status)}>
                         {userContext.group.supervisor.status}
                       </small>
                       <select onChange={handleSupervisorChange} name="id" className="form-control mt-3" >
@@ -94,14 +110,14 @@ export default function RequestSupervisors() {
                       <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div className="form-group">
-                      <input type="submit" className="btn btn-sm btn-primary" value="Request" />
+                      <input type="submit" className="btn btn-sm btn-primary" value="Request"/>
                     </div>
                   </form>
                   <div className="border-bottom mb-4"></div>
                   <form onSubmit={submitCoSupervisor} className="mb-4" style={{maxWidth: '30rem'}}>
                     <div className="form-group mb-3">
                       <label htmlFor="exampleInputEmail1">Request Co-Supervisor</label>
-                      <small className={"alert alert-warning p-1 ms-2"}>
+                      <small className={changeStatusStyle(userContext.group.coSupervisor.status)}>
                         {userContext.group.coSupervisor.status}
                       </small>
                       <select onChange={handleCoSupervisorChange} name="id" className="form-control mt-3">
