@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import ImageSlider from '../../components/image-slider/ImageSlider'
 import Logo from '../../assets/images/logo.jpg'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../../App'
 
 export default function Home() {
@@ -39,10 +39,6 @@ export default function Home() {
     <div style={{height: '100vh'}}>
       <div className="row h-100 w-100">
         <div className="col-md-6 gradient-bg-anim text-light">
-          <div className="line"></div>
-          <div className="line ms-2"></div>
-          <div className="line ms-2"></div>
-          <div className="line ms-2"></div>
         </div>
         <div className="col-md-6 bg-light">
           <form onSubmit={submit} className="position-relative top-50 start-50 translate-middle" style={{width: '23rem'}}>
@@ -64,6 +60,12 @@ export default function Home() {
             </div>
             <div className="form-group mb-3">
               <input type="submit" className="btn btn-primary" value="Sign In" />
+            </div>
+            <div className="form-group mb-3">
+              <Link to="/student/register" className="btn btn-link ps-0">
+                <i class="fa fa-registered"></i>
+                <span className="ms-2">Student Registration</span>
+              </Link>
             </div>
           </form>
         </div>

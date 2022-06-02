@@ -1,7 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import FooterBar from "../../components/footer-bar/FooterBar";
+import NavigationBar from "../../components/navigation-bar/NavigationBar";
 
 export default function RegisterStudent() {
+
+  const navigate = useNavigate();
+
   const [form, setform] = useState({
     studentId: "",
     name: "",
@@ -21,18 +27,31 @@ export default function RegisterStudent() {
       axios.post(`http://localhost:3000/api/students`, form)
       .then(res => {
         console.log(res.data);
+        navigate("/index");
       })
       .catch(err => {
         console.log(err);
       });
   }
 
+  const back = () => {
+    navigate(-1);
+  }
+
   return (
     <div>
-      <div className="container d-flex justify-content-center">
-        <div className="col-md-7">
-          <h4 className="text-uppercase mb-3">Student Registration</h4>
-          <form onSubmit={submit} style={{width: '30rem'}} >
+      <div className="container d-flex justify-content-center pt-4">
+        <div className="col-md-5 pt-5">
+          <button onClick={back} type="button" className="btn btn-transparent border-0 mb-3 ps-0">
+            <i className="fa fa-arrow-left"></i>
+            <span className="ms-2">Back</span>
+          </button>
+          <h4 className="text-capitalize mb-3">
+            <i className="fa fa-user-plus"></i>
+            <span className="ms-3"></span>
+            Student Registration
+          </h4>
+          <form onSubmit={submit}>
             <div className="form-group mb-3">
               <label htmlFor="studentId">Student ID</label>
               <input onChange={handleChange} type="text" className="form-control" id="studentId" name="studentId" />
@@ -57,6 +76,7 @@ export default function RegisterStudent() {
           </form>
         </div>
       </div>
+      <FooterBar />
     </div>
   );
 }

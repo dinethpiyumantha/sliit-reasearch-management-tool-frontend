@@ -1,15 +1,29 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import FooterBar from "../../components/footer-bar/FooterBar";
 import NavigationBar from "../../components/navigation-bar/NavigationBar";
+import UserContext from "../../App";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterGroup() {
+
+  const userContext = useContext(UserContext);
+  const navigate = useNavigate();
+
   const [form, setform] = useState({
     name: "",
     description: "",
     topic: "",
     category: "",
     members: [""],
+    supervisor: {
+      id: "",
+      status: ""
+    },
+    coSupervisor: {
+      id: "",
+      status: ""
+    }
   });
 
   const categoryList = [
@@ -28,6 +42,7 @@ export default function RegisterGroup() {
   }
 
   const handleChange = (e) => {
+    console.log(e.target.name + ": " + e.target.value);
     setform({ ...form, [e.target.name]: e.target.value });
   }
 
@@ -37,16 +52,18 @@ export default function RegisterGroup() {
     setform({ ...form, members });
 }
 
-const submit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
+    console.log(form);
     axios.post(`http://localhost:3000/api/groups`, form)
     .then(res => {
         console.log(res.data);
+        navigate("/");
         })
     .catch(err => {
         console.log(err);
     });
-}
+  }
 
   return (
     <div>
@@ -99,7 +116,7 @@ const submit = (e) => {
           <div className="form-group mb-2 ps-3">
           {(form.members.length != 4) ? 
             (<button onClick={addMemberElement} type="button" className="btn btn-sm btn-outline-dark ms-1" style={{marginLeft: '2.5rem'}}>
-                <span className="me-2">Add Member</span><i class="fa fa-plus" aria-hidden="true"></i>
+                <span className="me-2">Add Member</span><i className="fa fa-plus" aria-hidden="true"></i>
             </button>)
             : null
           }

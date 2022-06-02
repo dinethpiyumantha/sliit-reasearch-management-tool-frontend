@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import './theme.scss';
 import RegisterGroup from './pages/group/RegisterGroup';
 import RegisterStudent from './pages/student/RegisterStudent';
@@ -8,17 +8,33 @@ import SubmitDocument from './pages/group/SubmitDocument';
 import { Routes, Route } from 'react-router-dom';
 import Chat from './pages/chat/Chat';
 import Home from './pages/home/Home';
+import axios from 'axios';
 
 export const UserContext = createContext();
 
 export default function App() {
 
   const [context, setcontext] = useState(null);
+  const [group, setgroup] = useState(null);
+
+  const fetchData = () => {
+    axios.get(`http://localhost:3000/api/groups/student/${JSON.parse(localStorage.getItem('user')).studentId}`)
+    .then(res => {
+      setgroup(res.data);
+    })
+    .catch(err => {
+      console.log(err);
+      navigate("/group/register");
+    });
+  }
 
   const getContextValues = {
-      user: JSON.parse(localStorage.getItem('user')),
-      token: localStorage.getItem('token'),
+    user: JSON.parse(localStorage.getItem('user')),
+    token: localStorage.getItem('token'),
+    group: group,
   }
+
+  fetchData();
 
   return (
     <UserContext.Provider value={getContextValues}>

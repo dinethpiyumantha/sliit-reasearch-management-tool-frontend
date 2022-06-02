@@ -9,9 +9,9 @@ export default function TemplateCard(props) {
 
   return (
     <div className="card shadow-sm" style={{width: '15rem'}}>
-        <img src={props.image} className="card-img-top" alt="..."/>
+        <img src={props.image} className="card-img-top" alt="..." style={{height: '12rem'}}/>
         <div className="card-body">
-            <h5 className="card-title">{props.title}</h5>
+            <h5 className="card-title text-capitalize">{props.title}</h5>
             <p className="card-text">{props.description}</p>
             <button onClick={download} type="button" className="btn btn-sm btn-primary">
                 <span className="me-2">Download</span>
