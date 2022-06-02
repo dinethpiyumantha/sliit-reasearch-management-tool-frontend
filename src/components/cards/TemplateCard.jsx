@@ -15,7 +15,7 @@ export default function TemplateCard(props) {
             <p className="card-text">{props.description}</p>
             <button onClick={download} type="button" className="btn btn-sm btn-primary">
                 <span className="me-2">Download</span>
-                <i class="fas fa-download"></i>
+                <i className="fas fa-download"></i>
             </button>
         </div>
     </div>

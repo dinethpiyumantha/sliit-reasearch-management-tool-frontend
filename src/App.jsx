@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useState } from 'react'
 import './theme.scss';
 import RegisterGroup from './pages/group/RegisterGroup';
 import RegisterStudent from './pages/student/RegisterStudent';
@@ -9,9 +9,19 @@ import { Routes, Route } from 'react-router-dom';
 import Chat from './pages/chat/Chat';
 import Home from './pages/home/Home';
 
+export const UserContext = createContext();
+
 export default function App() {
+
+  const [context, setcontext] = useState(null);
+
+  const getContextValues = {
+      user: JSON.parse(localStorage.getItem('user')),
+      token: localStorage.getItem('token'),
+  }
+
   return (
-    <div>
+    <UserContext.Provider value={getContextValues}>
       <Routes>
         <Route path="/" element={<ProfileHome/>} />
         <Route path="/index" element={<Home/>} />
@@ -21,6 +31,6 @@ export default function App() {
         <Route path="/group/submissions" element={<SubmitDocument/>} />
         <Route path="/group/discussion" element={<Chat/>} />
       </Routes>
-    </div>
+    </UserContext.Provider>
   )
 }
