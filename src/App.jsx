@@ -8,6 +8,7 @@ import SubmitDocument from './pages/group/SubmitDocument';
 import { Routes, Route } from 'react-router-dom';
 import Chat from './pages/chat/Chat';
 import Home from './pages/home/Home';
+import RegisterStaff from './pages/staff/RegisterStaff';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/group/supervisors" element={<RequestSupervisors/>} />
         <Route path="/group/submissions" element={<SubmitDocument/>} />
         <Route path="/group/discussion" element={<Chat/>} />
+        <Route path="/staff/register" element={<RegisterStaff/>}/>
       </Routes>
     </div>
   )
