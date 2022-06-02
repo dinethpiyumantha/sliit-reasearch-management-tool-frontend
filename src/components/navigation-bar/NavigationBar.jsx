@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/images/logo.jpg';
+import AdminNavigationBar from './AdminNavigationBar';
 
 export default function NavigationBar() {
     
@@ -27,6 +28,9 @@ export default function NavigationBar() {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Home</a>
+                        </li>
+                        <li className="nav-item">
+                        <Link to="/admin" className="nav-link nav-active" href="#">Admin</Link>
                         </li>
                     </ul>
                 </div>
@@ -71,8 +75,11 @@ export default function NavigationBar() {
                     </div>
                 </div>
                 <input className="form-control w-25" type="search" placeholder="Search" aria-label="Search" />
+                
             </div>
         </nav>
+        
+
     </div>
   )
 }

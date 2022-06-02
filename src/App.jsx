@@ -9,6 +9,10 @@ import { Routes, Route } from 'react-router-dom';
 import Chat from './pages/chat/Chat';
 import Home from './pages/home/Home';
 
+import ViewRoles from './pages/admin/ViewRoles';
+import PanelMembers from './pages/admin/PanelMembers';
+import Submission from './pages/admin/Submission';
+
 export default function App() {
   return (
     <div>
@@ -20,6 +24,10 @@ export default function App() {
         <Route path="/group/supervisors" element={<RequestSupervisors/>} />
         <Route path="/group/submissions" element={<SubmitDocument/>} />
         <Route path="/group/discussion" element={<Chat/>} />
+
+        <Route path="/admin" element={<ViewRoles/>} />
+        <Route path="/panelmembers" element={<PanelMembers/>} />
+        <Route path="/submission" element={<Submission/>} />
       </Routes>
     </div>
   )
