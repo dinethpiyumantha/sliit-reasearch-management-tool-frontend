@@ -19,7 +19,7 @@ export default function EvaluateTopic() {
   const submit = (e) => {
       e.preventDefault();
       console.log(form);
-      axios.post(`http://localhost:5000/api/EvaluateAccepts`, form)
+      axios.post(`http://localhost:5000/api/topicevaluate`, form)
       .then(res => {
         console.log(res.data);
         navigate("/index");
@@ -36,9 +36,10 @@ export default function EvaluateTopic() {
 
   return (
     <div>
+    <div className="container mt-md-5 pb-md-5 p-3 mb-2 bg-light text-dark">
       <div className="container d-flex justify-content-center pt-4">
         <div className="col-md-6 pt-6">
-          <h2 className="text-capitalize mb-3 mt-5">Research Topic Evalauation</h2>
+          <h2 className="text-capitalize mb-3 mt-5">Research Topic Evaluation</h2>
           <form onSubmit={submit} style={{width: '50rem'}} >
             <div className="form-group mb-4">
               <label htmlFor="groupId">Group ID</label>
@@ -67,6 +68,7 @@ export default function EvaluateTopic() {
             <input type="submit" className="btn btn-primary" value="Submit" style={{width: '50rem'}}/>
           </form>
         </div>
+      </div>
       </div>
       <FooterBar />
     </div>
