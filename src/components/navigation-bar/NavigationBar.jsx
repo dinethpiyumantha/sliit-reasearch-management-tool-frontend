@@ -25,9 +25,7 @@ export default function NavigationBar() {
                         <li className="nav-item">
                             <Link to="/" className="nav-link nav-active" href="#">Home</Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Home</a>
-                        </li>
+                        
                     </ul>
                 </div>
                 <button className="btn btn-outline-light border-0 rounded-circle" type="button">
@@ -40,7 +38,36 @@ export default function NavigationBar() {
                 <div className="text-muted">
                     <img src={Logo} alt="logo" style={{height: '2rem'}}/>
                 </div>
-           
+                <div>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
+                            <li className={(path == '/') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/" className={(path == '/') ? 'btn nav-item-btn-active' : 'btn'}>
+                                <i class="fas fa-house-user"></i>
+                                    <span className="ms-1">Home</span>
+                                </Link>
+                            </li>
+                            <li className={(path == '/supervisor/viewtopicaccept') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/supervisor/viewtopicaccept" className={(path == '/supervisor/viewtopicaccept') ? 'btn nav-item-btn-active' : 'btn'}>
+                                <i class="fas fa-check-circle"></i>
+                                <span className="ms-1">Topic Acceptance</span>
+                            </Link>
+                            </li>
+                            <li className={(path == '/group/submissions') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/group/submissions" className={(path == '/group/submissions') ? 'btn nav-item-btn-active' : 'btn'}>
+                                <i class="fas fa-file-signature"></i>
+                                <span className="ms-1">Document Evaluation</span>
+                            </Link>
+                            </li>
+                            <li className={(path == '/group/discussion') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/group/discussion" className={(path == '/group/discussion') ? 'btn nav-item-btn-active' : 'btn'}>
+                                <i class="fas fa-comment-dots"></i>
+                                <span className="ms-1">Group Chat</span>
+                            </Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <input className="form-control w-25" type="search" placeholder="Search" aria-label="Search" />
             </div>
         </nav>

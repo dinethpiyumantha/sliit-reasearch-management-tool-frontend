@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import FooterBar from "../../components/footer-bar/FooterBar";
+import NavigationBar from '../../components/navigation-bar/NavigationBar'
 
 export default function AcceptTopics() {
 
@@ -35,10 +36,11 @@ export default function AcceptTopics() {
 
   return (
     <div>
+      <NavigationBar></NavigationBar>
     <div className="container mt-md-5 pb-md-5 p-3 mb-2 bg-light text-dark">
       <div className="container d-flex justify-content-center pt-4">
         <div className="col-md-6 pt-6">
-          <h2 className="text-capitalize mb-3 mt-5">Research Topic Acceptance Form</h2>
+          <h2 className="text-capitalize mb-3 mt-1" style={{fontSize: '2.5rem'}}>Research Topic Acceptance Form</h2>
           <form onSubmit={submit} style={{width: '50rem'}} >
             <div className="form-group mb-4">
               <label htmlFor="groupId">Group ID</label>
