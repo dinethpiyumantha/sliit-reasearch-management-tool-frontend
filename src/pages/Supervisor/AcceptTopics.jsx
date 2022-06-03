@@ -44,11 +44,11 @@ export default function AcceptTopics() {
           <form onSubmit={submit} style={{width: '50rem'}} >
             <div className="form-group mb-4">
               <label htmlFor="groupId">Group ID</label>
-              <input onChange={handleChange} type="text" className="form-control" id="groupId" name="groupId" />
+              <input onChange={handleChange} type="text" className="form-control" id="groupId" name="groupId"  />
             </div>
             <div className="form-group mb-4">
               <label htmlFor="topic">Research Topic</label>
-              <input onChange={handleChange} type="text" className="form-control" id="topic" name="topic" />
+              <input onChange={handleChange} type="text" className="form-control" id="topic" name="topic"/>
             </div>
             <div className="form-group mb-4">
                 <label htmlFor="acceptancestatus">Acceptance Status</label>

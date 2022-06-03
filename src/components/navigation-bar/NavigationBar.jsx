@@ -47,8 +47,8 @@ export default function NavigationBar() {
                                     <span className="ms-1">Home</span>
                                 </Link>
                             </li>
-                            <li className={(path == '/supervisor/viewtopicaccept') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
-                                <Link to="/supervisor/viewtopicaccept" className={(path == '/supervisor/viewtopicaccept') ? 'btn nav-item-btn-active' : 'btn'}>
+                            <li className={(path == '/supervisor/viewtopics') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/supervisor/viewtopics" className={(path == '/supervisor/viewtopics') ? 'btn nav-item-btn-active' : 'btn'}>
                                 <i class="fas fa-check-circle"></i>
                                 <span className="ms-1">Topic Acceptance</span>
                             </Link>
