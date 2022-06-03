@@ -44,7 +44,7 @@ export default function AdminNavigationBar() {
                             <li className={(path == '/admin') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
                                 <Link to="/admin" className={(path == '/admin') ? 'btn nav-item-btn-active' : 'btn'}>
                                     <i class="fa fa-users"></i>
-                                    <span className="ms-1">View Roles</span>
+                                    <span className="ms-1">Users</span>
                                 </Link>
                             </li>
                             <li className={(path == '/admin/panelmembers') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>

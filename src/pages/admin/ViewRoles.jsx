@@ -1,3 +1,4 @@
+import { SpaceBar } from '@mui/icons-material'
 import { borderRadius } from '@mui/system'
 import React from 'react'
 import FooterBar from '../../components/footer-bar/FooterBar'
@@ -30,6 +31,20 @@ export default function ViewRoles() {
         },
       ]
 
+      const actionUpdate = [
+        {
+            id: "A001",
+            update : "Update",
+        }
+      ]
+
+      const actionDelete = [
+        {
+            id: "A001",
+            delete : "Delete",
+        }
+      ]
+
     return (
         <div>
             <AdminNavigationBar />
@@ -53,6 +68,21 @@ export default function ViewRoles() {
                         <td>{role.email}</td>
                         <td>{role.phone}</td>
                         <td>{role.role}</td>
+
+                        <td>
+                            <button className="btn btn-sm btn-success">
+                                {actionUpdate.map((updateAction, index) => (
+                                    <option key={index} value={updateAction.id}>{updateAction.update}</option>
+                                ))}
+                            </button>
+                           
+                        
+                            <button className="btn btn-sm btn-danger">
+                                {actionDelete.map((deleteAction, index) => (
+                                    <option key={index} value={deleteAction.id}>{deleteAction.delete}</option>
+                                ))}
+                            </button>
+                        </td>
                     </tr>
                 ))}
                
