@@ -101,7 +101,7 @@ export default function RequestSupervisors() {
                       <small className={changeStatusStyle(userContext.group.supervisor.status)}>
                         {userContext.group.supervisor.status}
                       </small>
-                      <select onChange={handleSupervisorChange} name="id" className="form-control mt-3" >
+                      <select onChange={handleSupervisorChange} name="id" className="form-control mt-3"  disabled={isApproved(userContext.group.supervisor.status)}>
                       {supervisors.map((supervisor, index) => {
                         return (
                         <option value={supervisor.id} key={index} >{supervisor.name}</option>
@@ -110,7 +110,7 @@ export default function RequestSupervisors() {
                       <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div className="form-group">
-                      <input type="submit" className="btn btn-sm btn-primary" value="Request"/>
+                      <input type="submit" className="btn btn-sm btn-primary" value="Request" disabled={isApproved(userContext.group.supervisor.status)}/>
                     </div>
                   </form>
                   <div className="border-bottom mb-4"></div>
@@ -120,7 +120,7 @@ export default function RequestSupervisors() {
                       <small className={changeStatusStyle(userContext.group.coSupervisor.status)}>
                         {userContext.group.coSupervisor.status}
                       </small>
-                      <select onChange={handleCoSupervisorChange} name="id" className="form-control mt-3">
+                      <select onChange={handleCoSupervisorChange} name="id" className="form-control mt-3" disabled={isApproved(userContext.group.coSupervisor.status)}>
                         {coSupervisors.map((supervisor, index) => {
                           return (
                           <option value={supervisor.id} key={index} >{supervisor.name}</option>
@@ -129,7 +129,7 @@ export default function RequestSupervisors() {
                       <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div className="form-group">
-                      <input type="submit" className="btn btn-sm btn-primary" value="Request" />
+                      <input type="submit" className="btn btn-sm btn-primary" value="Request" disabled={isApproved(userContext.group.coSupervisor.status)}/>
                     </div>
                   </form>
                 </div>

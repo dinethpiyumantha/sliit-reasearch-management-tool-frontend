@@ -1,14 +1,21 @@
 import axios from "axios";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import FooterBar from "../../components/footer-bar/FooterBar";
 import NavigationBar from "../../components/navigation-bar/NavigationBar";
-import UserContext from "../../App";
+import { UserContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 export default function RegisterGroup() {
 
   const userContext = useContext(UserContext);
   const navigate = useNavigate();
+
+  const checkGroupAndNavigate = () => {
+    console.log(userContext);
+    if (userContext.group) { 
+      navigate("/")
+    };
+  }
 
   const [form, setform] = useState({
     name: "",
@@ -64,6 +71,10 @@ export default function RegisterGroup() {
         console.log(err);
     });
   }
+
+  useEffect(() => {
+    checkGroupAndNavigate();
+  },[]);
 
   return (
     <div>

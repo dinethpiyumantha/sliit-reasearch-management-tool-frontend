@@ -19,7 +19,7 @@ export default function NavigationBar() {
     <div>
         <nav className="navbar fixed-top navbar-expand-lg bg-dark navbar-dark pb-0 border-bottom">
             <div className="container">
-                <div className="nav-brand">RP</div>
+                <div className="nav-brand text-white me-md-3">SLIIT Research Portal</div>
                 <button className="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -29,7 +29,10 @@ export default function NavigationBar() {
                             <Link to="/" className="nav-link nav-active" href="#">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Home</a>
+                            <a className="nav-link" href="#">About</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Guidlines</a>
                         </li>
                     </ul>
                 </div>
