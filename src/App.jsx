@@ -7,10 +7,11 @@ import RequestSupervisors from './pages/group/RequestSupervisors';
 import SubmitDocument from './pages/group/SubmitDocument';
 import { Routes, Route } from 'react-router-dom';
 import Chat from './pages/chat/Chat';
-import Home from './pages/home/Home';
+import Home from './pages/staffHome/Home';
 import RegisterStaff from './pages/staff/RegisterStaff';
 import EvaluateTopic from './pages/panelMember/EvaluateTopics';
 import ViewTopicsToEvaluate from './pages/panelMember/ViewTopicsToEvaluate';
+import AcceptTopics from './pages/Supervisor/AcceptTopics';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/staff/register" element={<RegisterStaff/>}/>
         <Route path="/panelmember/evaluatetopic" element={<EvaluateTopic/>}/>
         <Route path="/panelmember/viewtopics" element={<ViewTopicsToEvaluate/>}/>
+        <Route path="/supervisor/accepttopics" element={<AcceptTopics/>}/>
       </Routes>
     </div>
   )

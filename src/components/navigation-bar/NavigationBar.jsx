@@ -40,36 +40,7 @@ export default function NavigationBar() {
                 <div className="text-muted">
                     <img src={Logo} alt="logo" style={{height: '2rem'}}/>
                 </div>
-                <div>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
-                            <li className={(path == '/') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
-                                <Link to="/" className={(path == '/') ? 'btn nav-item-btn-active' : 'btn'}>
-                                    <i class="fa fa-users"></i>
-                                    <span className="ms-1">Profile</span>
-                                </Link>
-                            </li>
-                            <li className={(path == '/group/supervisors') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
-                                <Link to="/group/supervisors" className={(path == '/group/supervisors') ? 'btn nav-item-btn-active' : 'btn'}>
-                                <i class="fas fa-user-tie"></i>
-                                <span className="ms-1">Supervisors</span>
-                            </Link>
-                            </li>
-                            <li className={(path == '/group/submissions') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
-                                <Link to="/group/submissions" className={(path == '/group/submissions') ? 'btn nav-item-btn-active' : 'btn'}>
-                                <i class="fas fa-file-signature"></i>
-                                <span className="ms-1">Submissions</span>
-                            </Link>
-                            </li>
-                            <li className={(path == '/group/discussion') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
-                                <Link to="/group/discussion" className={(path == '/group/discussion') ? 'btn nav-item-btn-active' : 'btn'}>
-                                <i class="fas fa-comment-dots"></i>
-                                <span className="ms-1">Discussion</span>
-                            </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+           
                 <input className="form-control w-25" type="search" placeholder="Search" aria-label="Search" />
             </div>
         </nav>
