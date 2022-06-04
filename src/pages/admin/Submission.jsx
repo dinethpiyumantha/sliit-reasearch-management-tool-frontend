@@ -7,28 +7,6 @@ import axios from 'axios'
 
 export default function Submission() {
 
-    // const submissionDetails = [
-    //     {
-    //       submissionType: "PP2",
-    //       description: "PP1 upload as docx",
-    //       fileType: "docx",
-    //       deadline: "2021-01-01",
-          
-    //     },
-    //     {
-    //         submissionType: "PP1",
-    //         description: "PP1 upload as docx",
-    //         fileType: "docx",
-    //         deadline: "2021-01-01",
-    //     },
-    //     {
-    //         submissionType: "PP1",
-    //         description: "PP1 upload as docx",
-    //         fileType: "docx",
-    //         deadline: "2021-01-01",
-    //     },
-    //   ]
-
       const navigate = useNavigate();
       const [submission, setSubmission] = useState({
         submissionType: "",

@@ -1,5 +1,6 @@
-import { Construction } from '@mui/icons-material';
+import axios from 'axios';
 import React, { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
 import FooterBar from '../../components/footer-bar/FooterBar'
 import AdminNavigationBar from '../../components/navigation-bar/AdminNavigationBar'
 import NavigationBar from '../../components/navigation-bar/NavigationBar'
@@ -7,58 +8,85 @@ import NavigationBar from '../../components/navigation-bar/NavigationBar'
 export default function MarkingSchemes() {
 
     const [form, setForm] = useState({
-        name: "",
+        submission: "",
         criterias: [
-            {criteria: "", weight: ""},
-        ]
+            {criteria: "", weight: ""}
+        ],
     });
 
+    const handleChangeCriterias = (e, index) => {
+        let criterias = [...form.criterias];
+        criterias[index] = {...criterias[index], [e.target.name]: e.target.value};
+        setForm({...form, criterias});
+    }
+
+    const handleChange = (e) => {
+        setForm({...form, [e.target.name]: e.target.value});
+    }
+
     const addCriteriaElement = () => {
-        console.log(form);
+        setForm({...form, criterias: [...form.criterias, {criteria: "", weight: ""}]});
+    }
+
+    const resetForm = () => {
         setForm({
-            ...form,
+            submission: "",
             criterias: [
-                ...form.criterias,
                 {criteria: "", weight: ""}
-            ]
+            ],
+        });
+    }
+
+    const submit = (e) => {
+        e.preventDefault();
+        axios.post(`http://localhost:3000/api/markingschemes`, form)
+        .then(res => {
+            console.log(res);
+            resetForm();
         })
-        console.log(form);
+        .catch(err => {
+            console.log(err);
+        });
     }
 
     return (
         <div>
             <AdminNavigationBar />
-            <div className="container mt-5">
+            <div className="container mt-5" style={{minHeight:'60vh'}}>
             <div className="row d-flex justify-content-center">
-                <form className="row g-3">
-                    <div className="col-md-6">
-                    <label htmlFor="inputEmail4" className="form-label">Submission Type</label>
-                    <input type="email" className="form-control" id="inputEmail4"/>
+                <form onSubmit={submit} className="col-md-12 g-3">
+                    <div className="form-group mb-4">
+                        <label>Submission Type</label>
+                        <input onChange={handleChange} className="form-control" name="submission"type="text" placeholder="Submission Type"/>
                     </div>
-
-                    <div className="row">
-                        <div className="col-md-10">
-                            <label htmlFor="inputEmail4" className="form-label">Marking Criteria</label>
-                        </div>
-                        <div className="col-md-2">
-                            <label htmlFor="inputEmail4" className="form-label">Marks</label>
-                        </div>
+                    <table className="w-100 mb-3">
+                        <thead>
+                            <tr>
+                                <th className="w-75">Criteria</th>
+                                <th className="w-25 ps-2">Mark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {form.criterias.map((criteria, index) => (
+                                <tr className="mb-2" key={index}>
+                                <td className="w-75">
+                                    <input onChange={e => handleChangeCriterias(e, index)} className="form-control" name="criteria" type="text" placeholder="Criteria"/>
+                                </td>
+                                <td className="w-25 ps-2">
+                                    <input onChange={e => handleChangeCriterias(e, index)} className="form-control" name="weight" type="number" placeholder="Weight"/>
+                                </td>
+                            </tr>
+                            ))}
+                            
+                            
+                        </tbody>
+                    </table>
+                    <button onClick={addCriteriaElement} type="button" className="btn btn-success">
+                                Add New Criteria +
+                    </button>
+                    <div className="form-group mt-4">
+                        <input type="submit" value="Submit" className="btn btn-primary" />
                     </div>
-                    {form.criterias.map((criteria, index) => (
-                    <div className="row mb-2" key={index}>
-                        <div className="col-md-10">
-                            <input type="text" name="criteria" className="form-control" id="inputEmail4" value={criteria.criteria}/>
-                        </div>
-                        <div className="col-md-2">
-                            <input type="number" name="weight" className="form-control" id="inputEmail4" value={criteria.weight}/>
-                        </div>
-                    </div>
-                    ))}
-
-                <div className="d-grid gap-2 d-md-block">
-                <button onClick={addCriteriaElement} className="btn btn-sm btn-success" type="button">Add Items</button>
-                <button className="btn ms-2 btn-sm btn-success" type="button">Submit</button>
-            </div>
                 </form>
             </div>
             </div>
