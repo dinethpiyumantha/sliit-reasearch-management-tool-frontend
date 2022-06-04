@@ -21,7 +21,7 @@ export default function AcceptTopics() {
       console.log(form);
       axios.post(`http://localhost:5000/api/topicAccepts`, form)
       .then(res => {
-        console.log(res.data);
+        alert("Acceptanace status saved successfully");
         navigate("/index");
         
       })

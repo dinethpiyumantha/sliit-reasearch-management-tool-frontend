@@ -12,6 +12,7 @@ import RegisterStaff from './pages/staff/RegisterStaff';
 import EvaluateTopic from './pages/panelMember/EvaluateTopics';
 import ViewTopicToAccept from './pages/Supervisor/ViewTopicToAccept';
 import AcceptTopics from './pages/Supervisor/AcceptTopics';
+import DocEvaluation from './pages/Supervisor/DocEvaluation';
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/panelmember/evaluatetopic" element={<EvaluateTopic/>}/>
         <Route path="/supervisor/viewtopics" element={<ViewTopicToAccept/>}/>
         <Route path="/supervisor/accepttopics" element={<AcceptTopics/>}/>
+        <Route path="/supervisor/docevaluations" element={<DocEvaluation/>}/>
       </Routes>
     </div>
   )

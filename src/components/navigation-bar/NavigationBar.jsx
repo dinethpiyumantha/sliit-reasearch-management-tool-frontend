@@ -53,8 +53,8 @@ export default function NavigationBar() {
                                 <span className="ms-1">Topic Acceptance</span>
                             </Link>
                             </li>
-                            <li className={(path == '/group/submissions') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
-                                <Link to="/group/submissions" className={(path == '/group/submissions') ? 'btn nav-item-btn-active' : 'btn'}>
+                            <li className={(path == '/supervisor/docevaluations') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/supervisor/docevaluations" className={(path == '/supervisor/docevaluations') ? 'btn nav-item-btn-active' : 'btn'}>
                                 <i class="fas fa-file-signature"></i>
                                 <span className="ms-1">Document Evaluation</span>
                             </Link>
