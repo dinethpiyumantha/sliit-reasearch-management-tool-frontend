@@ -11,6 +11,9 @@ import Home from './pages/home/Home';
 import RegisterStaff from './pages/staff/RegisterStaff';
 import EvaluateTopic from './pages/panelMember/EvaluateTopics';
 import ViewTopicsToEvaluate from './pages/panelMember/ViewTopicsToEvaluate';
+import AcceptTopics from './pages/Supervisor/AcceptTopics';
+import PresentationEvaluation from './pages/panelMember/PresentationEvaluation'
+
 
 export default function App() {
   return (
@@ -26,6 +29,10 @@ export default function App() {
         <Route path="/staff/register" element={<RegisterStaff/>}/>
         <Route path="/panelmember/evaluatetopic" element={<EvaluateTopic/>}/>
         <Route path="/panelmember/viewtopics" element={<ViewTopicsToEvaluate/>}/>
+        <Route path="/panelmember/evaluate/presentation" element={<PresentationEvaluation/>}/>
+        <Route path="/supervisor/accepttopics" element={<AcceptTopics/>}/>
+       
+
       </Routes>
     </div>
   )

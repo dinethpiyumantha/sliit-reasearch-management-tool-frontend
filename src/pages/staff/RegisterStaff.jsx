@@ -9,7 +9,7 @@ export default function RegisterStaff() {
     email: "",
     phone: "",
     type: "",
-    interests: [""],
+    interests: [],
     password: ""
   });
   
