@@ -1,59 +1,20 @@
-import React from 'react'
-import FooterBar from '../../components/footer-bar/FooterBar'
-import NavigationBar from '../../components/navigation-bar/NavigationBar'
-
-export default function Chat() {
-  return (
-    <div>
-        <NavigationBar />
-        <div className="container mt-md-5 pb-md-5">
-          <div className="row">
-             
-              <div className="col-md-9 ps-md-5">
-                <h4 className="mb-3">Discussion</h4>
-                <div className="row d-flex justify-content-start">
-                  <div className="col-md-8 message-item mb-3">
-                    <small>IT19994192</small>
-                    <p>Hello !</p>
-                  </div>
-                </div>
-                <div className="row d-flex justify-content-end">
-                  <div className="col-md-8 message-item-colored mb-3 text-white">
-                    <small>Kevin</small>
-                    <p>Hello !</p>
-                  </div>
-                </div>
-                <div className="row mt-3 border-top py-3">
-                  <textarea className="col-md-12 form-control" placeholder="Type your message here..."></textarea>
-                  <button type="submit" className="btn btn-primary col-md-2 ml-md-auto mt-2">
-                    <span className="me-2">Send</span>
-                    <i class="fa fa-paper-plane"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        <FooterBar />
-    </div>
-  )
-}
-
-
-
 // import axios from 'axios'
-// import React, { useState, useContext, useEffect } from 'react'
-// import { UserContext } from '../../App'
+// import React, { useState, useEffect } from 'react'
 // import FooterBar from '../../components/footer-bar/FooterBar'
 // import NavigationBar from '../../components/navigation-bar/NavigationBar'
 // import moment from 'moment';
 
 // export default function Chat() {
 
-//   const userContext = useContext(UserContext);
+//   const [userContext, setUserContext] = useState({
+//     group: {
+//       _id: "62987080fdd871d1b2d8528e"
+//     }
+//   });
 //   const [chat, setchat] = useState([]);
 //   const [messageForm, setMessageForm] = useState({
-//     senderId: userContext.user.studentId,
-//     sender: userContext.user.name,
+//     senderId: "123",
+//     sender: "Prof. Nuwan Kodagoda",
 //     group: userContext.group._id,
 //     message: ""
 //   });
@@ -93,10 +54,9 @@ export default function Chat() {
 //         <NavigationBar />
 //         <div className="container mt-md-5 pb-md-5">
 //           <div className="row">
-//               <SideBar />
 //               <div className="col-md-9 ps-md-5">
 //                 <h4 className="mb-3">Discussion</h4>
-//                 {chat && (chat.senderId == userContext.user._id) ? chat.map(chat => (
+//                 {chat && (chat.senderId == "123") ? chat.map(chat => (
 //                   <div className="row d-flex justify-content-start" key={chat.id}>
 //                     <div className="col-md-8 message-item mb-3">
 //                       <small>{chat.sender}</small>
@@ -137,6 +97,4 @@ export default function Chat() {
 //     </div>
 //   )
 // }
-
-
 

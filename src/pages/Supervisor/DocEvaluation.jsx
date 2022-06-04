@@ -21,7 +21,7 @@ export default function DocEvaluation() {
       console.log(form);
       axios.post(`http://localhost:5000/api/evaluateDocs`, form)
       .then(res => {
-        alert("Document evaluation marks saved successfully");
+        alert(Success, "Document evaluation marks saved successfully");
         navigate("/index");
         
       })

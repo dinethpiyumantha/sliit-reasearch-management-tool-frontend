@@ -24,16 +24,16 @@ h1, h2, h3, h4, h5, h6, a, label {
 
 .message-item {
     padding: .5rem 1rem;
-    background: #cacaca2f;
+    background:#B6D2F0;
     border: 1px solid #7474742f;
     border-radius: .5rem;
 }
 
 .message-item-colored {
     padding: .5rem 1rem;
-    background: rgb(51,0,91);
-    background: linear-gradient(90deg, rgba(51,0,91,1) 0%, rgba(8,0,38,1) 100%);
-    border: 1px solid #7474742f;
+    background: hsl(248, 13%, 77%);
+    background: #110480;
+    border: 1px solid #0fa4a62f;
     border-radius: .5rem;
 }
 

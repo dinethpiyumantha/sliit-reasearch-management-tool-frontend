@@ -59,8 +59,8 @@ export default function NavigationBar() {
                                 <span className="ms-1">Document Evaluation</span>
                             </Link>
                             </li>
-                            <li className={(path == '/group/discussion') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
-                                <Link to="/group/discussion" className={(path == '/group/discussion') ? 'btn nav-item-btn-active' : 'btn'}>
+                            <li className={(path == '/group/chat') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/group/chat" className={(path == '/group/chat') ? 'btn nav-item-btn-active' : 'btn'}>
                                 <i class="fas fa-comment-dots"></i>
                                 <span className="ms-1">Group Chat</span>
                             </Link>

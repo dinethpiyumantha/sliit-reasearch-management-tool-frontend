@@ -8,8 +8,8 @@ export default function TemplateCard(props) {
       }
 
   return (
-    <div className="card shadow-sm" style={{width: '15rem'}}>
-        <img src={props.image} className="card-img-top" alt="..."/>
+    <div className="card shadow-sm" style={{width: '1000rem'}}>
+        <img src={props.image}   className="img-fluid" alt="..."/>
         
     </div>
   )

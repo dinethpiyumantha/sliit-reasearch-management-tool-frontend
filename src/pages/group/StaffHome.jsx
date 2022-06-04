@@ -1,7 +1,6 @@
 import React from 'react'
 import FooterBar from '../../components/footer-bar/FooterBar'
 import NavigationBar from '../../components/navigation-bar/NavigationBar'
-
 import TemplateCard from '../../components/cards/TemplateCard'
 import sliit from '../../assets/images/sliit.jpg'
 
