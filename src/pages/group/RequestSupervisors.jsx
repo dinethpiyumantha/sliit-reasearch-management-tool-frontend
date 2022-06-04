@@ -22,12 +22,12 @@ export default function RequestSupervisors() {
 
   const fetchData = () => {
     const supervisors = [
-      {id: "1", name: "hello"},
+      {id: "1", name: "Prof. Nuwan Kodagoda"},
       {id: "2", name: "world"},
     ];
 
     const cosupervisors = [
-      {id: "1", name: "hello"},
+      {id: "1", name: "Lec. Thusithanjana Thilakarathna"},
       {id: "2", name: "world"},
     ];
 
@@ -91,7 +91,7 @@ export default function RequestSupervisors() {
   return (
     <div>
         <NavigationBar />
-        <div className="container mt-md-5 pb-md-5">
+        <div className="container mt-md-5 pb-md-5" style={{minHeight: '60vh'}}>
             <div className="row">
                 <SideBar />
                 <div className="col-md-9 ps-md-5">

@@ -14,6 +14,7 @@ export default function ProfileHome() {
   const fetchData = () => {
     axios.get('http://localhost:3000/api/templates')
       .then(res => {
+        console.log(res.data);
         setTemplates(res.data);
       })
       .catch(err => {
@@ -28,13 +29,15 @@ export default function ProfileHome() {
   return (
     <div>
         <NavigationBar />
-        <div className="container mt-5">
+        <div className="container mt-5" style={{minHeight: '60vh'}}>
             <div className="row">
                 <SideBar />
                 <div className="col-md-9 d-flex flex-column gap-3">
-                  {templates && templates.map((template, index) => (
-                    <TemplateCard title={template.name} description={template.description} image={template.image} key={index} />
-                  ))}
+                  <h3>Document Templates</h3>
+                  {templates && templates.map((template, index) => {
+                    return (
+                      <TemplateCard title={template.name} createdAt={template.createdAt} description={template.description} file={template.file} image={template.image} key={index} />
+                  )})}
                 </div>
             </div>
         </div>

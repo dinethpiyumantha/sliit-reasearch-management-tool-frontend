@@ -34,8 +34,8 @@ export default function RegisterGroup() {
   });
 
   const categoryList = [
-    "Academic",
-    "Arts",
+    "Machine Learning",
+    "Artificial Intelligence",
   ];
 
   const addMemberElement = () => {
@@ -73,7 +73,7 @@ export default function RegisterGroup() {
   }
 
   useEffect(() => {
-    checkGroupAndNavigate();
+    // checkGroupAndNavigate();
   },[]);
 
   return (

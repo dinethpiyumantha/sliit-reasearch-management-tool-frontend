@@ -1,12 +1,9 @@
-import React, { useState, useContext } from 'react'
-import ImageSlider from '../../components/image-slider/ImageSlider'
+import React, { useEffect, useState } from 'react'
 import Logo from '../../assets/images/logo.jpg'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
-import { UserContext } from '../../App'
 
 export default function Home() {
-  const userContext = useContext(UserContext);
 
   const [form, setform] = useState({
     studentId: '',
@@ -28,7 +25,7 @@ export default function Home() {
     .then(res => {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
-      navigate('/');
+      navigate('/group/register');
     })
     .catch(err => {
       console.log(err)

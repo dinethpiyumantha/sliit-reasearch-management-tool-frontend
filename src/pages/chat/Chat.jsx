@@ -50,7 +50,7 @@ export default function Chat() {
   return (
     <div>
         <NavigationBar />
-        <div className="container mt-md-5 pb-md-5">
+        <div className="container mt-md-5 pb-md-5" style={{minHeight: '60vh'}}>
           <div className="row">
               <SideBar />
               <div className="col-md-9 ps-md-5">

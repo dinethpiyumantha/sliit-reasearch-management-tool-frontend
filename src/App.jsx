@@ -15,17 +15,23 @@ export const UserContext = createContext();
 export default function App() {
 
   const [context, setcontext] = useState(null);
-  const [group, setgroup] = useState(null);
+  const [group, setgroup] = useState({});
 
   const fetchData = () => {
-    axios.get(`http://localhost:3000/api/groups/student/${JSON.parse(localStorage.getItem('user')).studentId}`)
-    .then(res => {
-      setgroup(res.data);
-    })
-    .catch(err => {
-      console.log(err);
-      navigate("/group/register");
-    });
+    console.log("fetching data");
+    if(JSON.parse(localStorage.getItem('user'))) {
+      console.log("user is logged in");
+      axios.get(`http://localhost:3000/api/groups/student/${JSON.parse(localStorage.getItem('user')).studentId}`)
+      .then(res => {
+        setgroup(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+        navigate("/group/register");
+      });
+    } else {
+      console.log("user is not logged in");
+    }
   }
 
   const getContextValues = {
@@ -34,7 +40,11 @@ export default function App() {
     group: group,
   }
 
-  fetchData();
+  // fetchData();
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <UserContext.Provider value={getContextValues}>
