@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { Navigate } from 'react-router-dom';
+
 
 
 export default function RegisterStaff() {
@@ -24,6 +26,7 @@ export default function RegisterStaff() {
     axios.post(`http://localhost:5000/api/staffs`, form)
     .then(res => {
       console.log(res.data);
+      
     })
     .catch(err => {
       console.log(err);
@@ -148,7 +151,7 @@ export default function RegisterStaff() {
                 <label htmlFor="password">Password:</label>
                 <input className="form-control" onChange={handleChange} type="password" name="password" />
               </div>
-              <input type="Submit" className="btn btn-primary" style={{width: '50rem'}} value="Register"/>         
+              <input type="Submit" className="btn btn-primary" style={{width: '50rem'}} value="Register"/>       
            </form>
        </div>
     </div>

@@ -13,7 +13,7 @@ import EvaluateTopic from './pages/panelMember/EvaluateTopics';
 import ViewTopicsToEvaluate from './pages/panelMember/ViewTopicsToEvaluate';
 import AcceptTopics from './pages/Supervisor/AcceptTopics';
 import PresentationEvaluation from './pages/panelMember/PresentationEvaluation'
-
+import ChatWithGroup from './pages/chat/ChatWithGroup'
 
 export default function App() {
   return (
@@ -31,7 +31,7 @@ export default function App() {
         <Route path="/panelmember/viewtopics" element={<ViewTopicsToEvaluate/>}/>
         <Route path="/panelmember/evaluate/presentation" element={<PresentationEvaluation/>}/>
         <Route path="/supervisor/accepttopics" element={<AcceptTopics/>}/>
-       
+        <Route path="/group/chat" element={<ChatWithGroup />} />
 
       </Routes>
     </div>

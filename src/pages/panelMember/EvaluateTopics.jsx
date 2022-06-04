@@ -1,13 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
 import FooterBar from "../../components/footer-bar/FooterBar";
+import PanelMemberNavigationBar from "../../components/navigation-bar/PanelMemberNavigationBar";
 
 export default function EvaluateTopic() {
 
   const [form, setform] = useState({
-    groupId: "",
-    topic: "",
-    acceptancestatus: "",
+    groupId: "2022S2_JUN_01",
+    topic: "A Sensitive Data Leakage Detection and Privacy Policy Analyzing Application for Android Systems (PriVot)",
+    acceptancestatus: "Accepted",
     evaluationstatus: "",
     feedback: "",
   });
@@ -22,6 +23,7 @@ export default function EvaluateTopic() {
       axios.post(`http://localhost:5000/api/topicevaluate`, form)
       .then(res => {
         console.log(res.data);
+        alert("Prsentation evaluation marks saved successfully");
         navigate("/index");
         
       })
@@ -36,6 +38,7 @@ export default function EvaluateTopic() {
 
   return (
     <div>
+    <PanelMemberNavigationBar/>
     <div className="container mt-md-5 pb-md-5 p-3 mb-2 bg-light text-dark">
       <div className="container d-flex justify-content-center pt-4">
         <div className="col-md-6 pt-6">
@@ -43,15 +46,15 @@ export default function EvaluateTopic() {
           <form onSubmit={submit} style={{width: '50rem'}} >
             <div className="form-group mb-4">
               <label htmlFor="groupId">Group ID</label>
-              <input onChange={handleChange} type="text" className="form-control" id="groupId" name="groupId"/>
+              <input onChange={handleChange} type="text" className="form-control" id="groupId" name="groupId" value="2022S2_JUN_01"/>
             </div>
             <div className="form-group mb-4">
               <label htmlFor="topic">Research Topic</label>
-              <input onChange={handleChange} type="text" className="form-control" id="topic" name="topic"/>
+              <input onChange={handleChange} type="text" className="form-control" id="topic" name="topic" value="A Sensitive Data Leakage Detection and Privacy Policy Analyzing Application for Android Systems (PriVot)"/>
             </div>
             <div className="form-group mb-4">
                 <label htmlFor="acceptancestatus">Supervisor Acceptance Status</label>
-                <input onChange={handleChange} type="text" className="form-control" id="acceptancestatus" name="acceptancestatus"/>
+                <input onChange={handleChange} type="text" className="form-control" id="acceptancestatus" name="acceptancestatus" value="Accepted"/>
             </div>
             <div className="form-group mb-4">
                 <label htmlFor="evaluationstatus">Evaluation Status</label>

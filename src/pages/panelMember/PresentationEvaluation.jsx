@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import FooterBar from "../../components/footer-bar/FooterBar";
+import PanelMemberNavigationBar from "../../components/navigation-bar/PanelMemberNavigationBar";
 
 export default function PresentationEvaluation() {
 
@@ -21,6 +22,7 @@ export default function PresentationEvaluation() {
       axios.post(`http://localhost:5000/api/evaluatePresentations`, form)
       .then(res => {
         console.log(res.data);
+        alert("Prsentation evaluation marks saved successfully");
         navigate("/index");
         
       })
@@ -35,6 +37,7 @@ export default function PresentationEvaluation() {
 
   return (
     <div>
+    <PanelMemberNavigationBar/>
     <div className="container mt-md-5 pb-md-5 p-3 mb-2 bg-light text-dark">
       <div className="container d-flex justify-content-center pt-4">
         <div className="col-md-6 pt-6">
