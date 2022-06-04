@@ -12,6 +12,9 @@ import Home from './pages/home/Home';
 import ViewRoles from './pages/admin/ViewRoles';
 import Submission from './pages/admin/Submission';
 import PanelMembersList from './pages/admin/PanelMembersList';
+import UploadTemplates from './pages/admin/UploadTemplates';
+import MarkingSchemes from './pages/admin/MarkingSchemes';
+import UpdateUsers from './pages/admin/UpdateUsers';
 
 export default function App() {
   return (
@@ -28,6 +31,9 @@ export default function App() {
         <Route path="/admin" element={<ViewRoles/>} />
         <Route path="/admin/panelmembers" element={<PanelMembersList/>} />
         <Route path="/admin/submission" element={<Submission/>} />
+        <Route path="/admin/templateupload" element={<UploadTemplates/>} />
+        <Route path="/admin/markingschemes" element={<MarkingSchemes/>} />
+        <Route path="/admin/updateusers/:id" element={<UpdateUsers/>}  />
       </Routes>
     </div>
   )

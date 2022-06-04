@@ -1,49 +1,42 @@
 import { SpaceBar } from '@mui/icons-material'
 import { borderRadius } from '@mui/system'
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import FooterBar from '../../components/footer-bar/FooterBar'
 import AdminNavigationBar from '../../components/navigation-bar/AdminNavigationBar'
 import NavigationBar from '../../components/navigation-bar/NavigationBar'
 
 export default function ViewRoles() {
 
-    const rolesDetails = [
-        {
-          id: "A001",
-          name: "D.M. Prasad",
-          email: "prasad@admin.sliit.lk",
-          phone: "071-2345678",
-          role: "Admin"
-        },
-        {
-            id: "A001",
-            name: "D.M. Prasad",
-            email: "prasad@admin.sliit.lk",
-            phone: "071-2345678",
-            role: "Admin"
-        },
-        {
-            id: "A001",
-            name: "D.M. Prasad",
-            email: "prasad@admin.sliit.lk",
-            phone: "071-2345678",
-            role: "Admin"
-        },
-      ]
+    const [users, setUsers] = useState();
+    const navigate = useNavigate();
 
-      const actionUpdate = [
-        {
-            id: "A001",
-            update : "Update",
-        }
-      ]
+    const fetchData = () => {
+        axios.get(`http://localhost:3000/api/users`)
+        .then(res => {
+            console.log(res.data);
+            setUsers(res.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
 
-      const actionDelete = [
-        {
-            id: "A001",
-            delete : "Delete",
-        }
-      ]
+    const deleteUser = (id) => {
+        axios.delete(`http://localhost:3000/api/users/${id}`)
+        .then(res => {
+            console.log(res);
+            fetchData();
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
         <div>
@@ -61,27 +54,17 @@ export default function ViewRoles() {
                 </tr>
                 </thead>
                 <tbody>
-                {rolesDetails.map((role, index) => (
+                {users && users.map((role, index) => (
                     <tr key={index}>
-                        <td>{role.id}</td>
+                        <td>{role.userId}</td>
                         <td>{role.name}</td>
                         <td>{role.email}</td>
                         <td>{role.phone}</td>
                         <td>{role.role}</td>
 
                         <td>
-                            <button className="btn btn-sm btn-success">
-                                {actionUpdate.map((updateAction, index) => (
-                                    <option key={index} value={updateAction.id}>{updateAction.update}</option>
-                                ))}
-                            </button>
-                           
-                        
-                            <button className="btn btn-sm btn-danger">
-                                {actionDelete.map((deleteAction, index) => (
-                                    <option key={index} value={deleteAction.id}>{deleteAction.delete}</option>
-                                ))}
-                            </button>
+                            <button onClick={e => navigate(`/admin/updateusers/${role._id}`)} className="btn btn-sm btn-success">Update</button>
+                            <button onClick={e => deleteUser(role._id)} className="btn ms-2 btn-sm btn-danger">Delete</button>
                         </td>
                     </tr>
                 ))}

@@ -43,20 +43,32 @@ export default function AdminNavigationBar() {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
                             <li className={(path == '/admin') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
                                 <Link to="/admin" className={(path == '/admin') ? 'btn nav-item-btn-active' : 'btn'}>
-                                    <i class="fa fa-users"></i>
+                                    <i className="fa fa-users"></i>
                                     <span className="ms-1">Users</span>
                                 </Link>
                             </li>
                             <li className={(path == '/admin/panelmembers') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
                                 <Link to="/admin/panelmembers" className={(path == '/admin/panelmembers') ? 'btn nav-item-btn-active' : 'btn'}>
-                                <i class="fas fa-user-tie"></i>
+                                <i className="fas fa-user-tie"></i>
                                 <span className="ms-1">Panel Memebers</span>
                             </Link>
                             </li>
                             <li className={(path == '/admin/submission') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
                                 <Link to="/admin/submission" className={(path == '/admin/submission') ? 'btn nav-item-btn-active' : 'btn'}>
-                                <i class="fas fa-file-signature"></i>
+                                <i className="fas fa-file-signature"></i>
                                 <span className="ms-1">Submissions</span>
+                            </Link>
+                            </li>
+                            <li className={(path == '/admin/markingschemes') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/admin/markingschemes" className={(path == '/admin/markingschemes') ? 'btn nav-item-btn-active' : 'btn'}>
+                                <i className="fas fa-file-signature"></i>
+                                <span className="ms-1">Marking Schemes</span>
+                            </Link>
+                            </li>
+                            <li className={(path == '/admin/templateupload') ? 'nav-item nav-active pb-1' : 'nav-item pb-1'}>
+                                <Link to="/admin/templateupload" className={(path == '/admin/templateupload') ? 'btn nav-item-btn-active' : 'btn'}>
+                                <i className="fas fa-file-signature"></i>
+                                <span className="ms-1">Templates</span>
                             </Link>
                             </li>
                             

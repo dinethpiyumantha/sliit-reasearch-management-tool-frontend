@@ -29,9 +29,7 @@ export default function NavigationBar() {
                         <li className="nav-item">
                             <a className="nav-link" href="#">Home</a>
                         </li>
-                        <li className="nav-item">
-                        <Link to="/admin" className="nav-link nav-active" href="#">Admin</Link>
-                        </li>
+                        
                     </ul>
                 </div>
                 <button className="btn btn-outline-light border-0 rounded-circle" type="button">
